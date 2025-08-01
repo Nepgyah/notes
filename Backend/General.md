@@ -1,4 +1,23 @@
-## Import modules,  not objects
+## API Url conventions
+Use the URL path to identify a resource and pair it with the correct request type to determine the action.
+
+### Method Types
+- GET: Retrieve data, fetch a list or single resource with no side effects
+- POST: Create or trigger a event, create a new resource or trigger an non CRUD action, or actions that go beyond simplying modifying a field
+- PUT: Full update, replace the entire object
+- PATCH: Partial update, change one or more fields of a resource
+- DELETE: Remove a resource
+
+Example:
+```
+GET /anime/123/ -> Get an anime with id of 123
+PATCH /anime/123/ -> Update one or more fields of an anime with id of 123
+POST /anime/123/add-two-list/ -> Non CRUD action, im doing something that dosent modify the anime but its relative
+PUT /anime/123/ -> Replace the information of an anime with id of 123
+DELETE /anime/123/ -> Delete an anime with id of 123
+```
+
+## Import modules, not objects
 Prefer to import modules of a library instead of individual objects
 Good:
 ```
